@@ -1,0 +1,17 @@
+{
+  "baseline": {
+    "config": "基线配置（无优化Prompt + top_k=1）",
+    "accuracy": 69.23076923076923,
+    "keyword_recall": 84.61538461538461,
+    "pass_count": 9,
+    "total": 13
+  },
+  "optimized": {
+    "config": "优化配置（强Prompt + top_k=3）",
+    "accuracy": 84.61538461538461,
+    "keyword_recall": 74.35897435897436,
+    "pass_count": 11,
+    "total": 13
+  },
+  "improvement": 15.384615384615387
+}

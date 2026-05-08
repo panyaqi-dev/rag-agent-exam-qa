@@ -1,0 +1,32 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# 敏感信息（关键！）
+.env
+*.key
+secrets.json
+
+# 项目数据和向量库
+data/
+db/
+*.sqlite3
+
+# 评估缓存（保留 evaluation_result.json）
+*.cache
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 大文件
+*.pdf
+*.zip
+*.pkl
