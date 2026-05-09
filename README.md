@@ -54,12 +54,13 @@ graph LR
 
 ## 📁 项目结构
 
+```
 rag-project/
 ├── data/                          # 知识库源文件（4 科 markdown）
 ├── db/                            # ChromaDB 向量库（自动生成）
 ├── evaluation/
-│   ├── test_questions.json       # 60 题评估测试集
-│   └── evaluation_details.json   # 每题详细评估结果
+│   ├── test_questions.json        # 60 题评估测试集
+│   └── evaluation_details.json    # 每题详细评估结果
 ├── build_kb.py                    # 知识库构建脚本
 ├── rag_qa.py                      # 命令行 RAG 问答
 ├── agent_qa.py                    # Agent 问答（带工具调用 + 多轮记忆）
@@ -70,6 +71,7 @@ rag-project/
 ├── requirements.txt
 ├── .env.example                   # 环境变量模板
 └── .gitignore
+```
 
 ---
 
