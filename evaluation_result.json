@@ -1,17 +1,161 @@
 {
-  "baseline": {
-    "config": "基线配置（无优化Prompt + top_k=1）",
-    "accuracy": 69.23076923076923,
-    "keyword_recall": 84.61538461538461,
-    "pass_count": 9,
-    "total": 13
+  "test_set_size": 60,
+  "evaluation_method": "LLM-as-Judge (qwen-plus)",
+  "configs": {
+    "no_rag": {
+      "config": "Config 1: no_rag (纯 LLM)",
+      "accuracy": 85.0,
+      "pass_count": 51,
+      "total": 60,
+      "by_subject": {
+        "operating_system": {
+          "pass": 13,
+          "total": 15,
+          "accuracy": 86.67
+        },
+        "data_structure": {
+          "pass": 12,
+          "total": 15,
+          "accuracy": 80.0
+        },
+        "computer_organization": {
+          "pass": 14,
+          "total": 15,
+          "accuracy": 93.33
+        },
+        "computer_network": {
+          "pass": 12,
+          "total": 15,
+          "accuracy": 80.0
+        }
+      },
+      "by_category": {
+        "fact": {
+          "pass": 20,
+          "total": 20,
+          "accuracy": 100.0
+        },
+        "concept": {
+          "pass": 14,
+          "total": 16,
+          "accuracy": 87.5
+        },
+        "application": {
+          "pass": 14,
+          "total": 16,
+          "accuracy": 87.5
+        },
+        "hallucination": {
+          "pass": 3,
+          "total": 8,
+          "accuracy": 37.5
+        }
+      }
+    },
+    "basic_rag": {
+      "config": "Config 2: basic_rag (简单 RAG, top_k=1)",
+      "accuracy": 95.0,
+      "pass_count": 57,
+      "total": 60,
+      "by_subject": {
+        "operating_system": {
+          "pass": 15,
+          "total": 15,
+          "accuracy": 100.0
+        },
+        "data_structure": {
+          "pass": 13,
+          "total": 15,
+          "accuracy": 86.67
+        },
+        "computer_organization": {
+          "pass": 15,
+          "total": 15,
+          "accuracy": 100.0
+        },
+        "computer_network": {
+          "pass": 14,
+          "total": 15,
+          "accuracy": 93.33
+        }
+      },
+      "by_category": {
+        "fact": {
+          "pass": 20,
+          "total": 20,
+          "accuracy": 100.0
+        },
+        "concept": {
+          "pass": 16,
+          "total": 16,
+          "accuracy": 100.0
+        },
+        "application": {
+          "pass": 14,
+          "total": 16,
+          "accuracy": 87.5
+        },
+        "hallucination": {
+          "pass": 7,
+          "total": 8,
+          "accuracy": 87.5
+        }
+      }
+    },
+    "optimized_rag": {
+      "config": "Config 3: optimized_rag (CoT + top_k=3)",
+      "accuracy": 90.0,
+      "pass_count": 54,
+      "total": 60,
+      "by_subject": {
+        "operating_system": {
+          "pass": 13,
+          "total": 15,
+          "accuracy": 86.67
+        },
+        "data_structure": {
+          "pass": 13,
+          "total": 15,
+          "accuracy": 86.67
+        },
+        "computer_organization": {
+          "pass": 14,
+          "total": 15,
+          "accuracy": 93.33
+        },
+        "computer_network": {
+          "pass": 14,
+          "total": 15,
+          "accuracy": 93.33
+        }
+      },
+      "by_category": {
+        "fact": {
+          "pass": 20,
+          "total": 20,
+          "accuracy": 100.0
+        },
+        "concept": {
+          "pass": 16,
+          "total": 16,
+          "accuracy": 100.0
+        },
+        "application": {
+          "pass": 14,
+          "total": 16,
+          "accuracy": 87.5
+        },
+        "hallucination": {
+          "pass": 4,
+          "total": 8,
+          "accuracy": 50.0
+        }
+      }
+    }
   },
-  "optimized": {
-    "config": "优化配置（强Prompt + top_k=3）",
-    "accuracy": 84.61538461538461,
-    "keyword_recall": 74.35897435897436,
-    "pass_count": 11,
-    "total": 13
-  },
-  "improvement": 15.384615384615387
+  "improvements": {
+    "rag_vs_no_rag": 10.0,
+    "optimized_vs_basic": -5.0,
+    "total": 5.0
+  }
 }
